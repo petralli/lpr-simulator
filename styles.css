@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto; /* Assicura che il contenitore sia centrato */
+}
+
+input {
+    width: 90%; /* Non occupa più il 100% della larghezza */
+    max-width: 300px; /* Larghezza massima per evitare che sia troppo largo */
+    padding: 12px;
+    margin: 10px auto; /* `margin: 0 auto` centra il campo di input */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    display: block; /* Assicura che `margin: 0 auto` funzioni */
+    text-align: center; /* Centra il testo (e quindi anche il cursore) */
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#qrcode {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#savedTexts {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 0 10px;
+    width: 90%; /* Stessa larghezza del campo input */  
+    max-width: 300px; /* Stessa larghezza massima del campo input */
+    margin: 10px auto; /* Centra la lista orizzontalmente */
+}
+
+#savedTexts li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centra verticalmente il contenuto */
+    padding: 8px;
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+}
+
+
+#savedTexts li:last-child {
+    border-bottom: none;
+}
+
+#savedTexts button {
+    background-color: #dc3545;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+#savedTexts button:hover {
+    background-color: #c82333;
+}
+
+.saved-text {
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+button:disabled {
+    background-color: #cccccc; /* Colore di sfondo grigio */
+    color: #666666; /* Colore del testo grigio scuro */
+    cursor: not-allowed; /* Cambia il cursore per indicare che non è cliccabile */
+    opacity: 0.7; /* Riduce leggermente l'opacità */
+}
