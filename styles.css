@@ -5,7 +5,9 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 0;
     background-color: #f4f4f9;
+    overflow-x: hidden;
 }
 
 .container {
@@ -17,6 +19,7 @@ body {
     width: 90%;
     max-width: 400px;
     margin: 0 auto; /* Assicura che il contenitore sia centrato */
+    box-sizing: border-box; /* Includi padding e border nella larghezza */
 }
 
 input {
