@@ -99,10 +99,26 @@ function updateGenerateButtonState() {
     const textInput = document.getElementById('textInput');
     const generateBtn = document.getElementById('generateBtn');
     generateBtn.disabled = textInput.value.trim() === '';
+    const clearBtn = document.getElementById('clearBtn');
+    if (clearBtn) {
+        clearBtn.disabled = textInput.value.trim() === '';
+    }
 }
 
 // Ascolta l'evento 'input' sul campo di testo
 document.getElementById('textInput').addEventListener('input', updateGenerateButtonState);
+
+// Ascolta il click sul pulsante Clear per svuotare il campo di input
+const clearBtnEl = document.getElementById('clearBtn');
+if (clearBtnEl) {
+    clearBtnEl.addEventListener('click', function() {
+        const input = document.getElementById('textInput');
+        input.value = '';
+        updateGenerateButtonState();
+        input.focus();
+        document.getElementById('qrcode').innerHTML = '';
+    });
+}
 
 // Chiamata iniziale per impostare lo stato corretto all'avvio
 document.addEventListener('DOMContentLoaded', function() {
